@@ -2,7 +2,11 @@
 package proyectotransversal;
 
 import accesoDatos.AlumnoData;
+import accesoDatos.InscripcionData;
+import accesoDatos.MateriaData;
 import entidades.Alumno;
+import entidades.Materia;
+import entidades.Inscripcion;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
@@ -12,9 +16,9 @@ public class ProyectoTransversal {
 
     public static void main(String[] args) {
         AlumnoData alumno = new AlumnoData();
-//        Alumno josias = new Alumno(4222333, "Torres", "Josías Ramón", LocalDate.of(2023, Month.DECEMBER, 10), true);
+        Alumno josias = new Alumno(4222333, "Torres", "Josías Ramón", LocalDate.of(2023, Month.DECEMBER, 10), true);
 //        alumno.guardarAlumno(josias);
-//        Alumno fernando=new Alumno(2,45231456, "López", "Fernando Omar", LocalDate.of(2022, Month.MARCH, 15), false);
+        Alumno fernando=new Alumno(2,45231456, "López", "Fernando Omar", LocalDate.of(2022, Month.MARCH, 15), false);
 //        alumno.guardarAlumno(fernando);
 
 //        Alumno fernando=new Alumno(10, 46000313, "López", "Carlos Fernando", LocalDate.of(2002, Month.MARCH, 15), true);
@@ -31,7 +35,12 @@ public class ProyectoTransversal {
 //            }
 //        System.out.println("ELIMINAR ALUMNO");
 //        alumno.eliminarAlumno(2);
-
+//        MateriaData materia=new MateriaData();
+        Materia mat1=new Materia("laboratorio", 2024, true);
+//        materia.guardarMateria(mat1);
+        InscripcionData inscripcion=new InscripcionData();  
+        Inscripcion insc1=new Inscripcion(josias, mat1, 5);
+        inscripcion.guardarInscripcion(insc1);
     }
 
 }

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/accesoDatos/Conexion.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/entidades/Inscripcion.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/accesoDatos/InscripcionData.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/proyectotransversal/ProyectoTransversal.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/accesoDatos/AlumnoData.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/accesoDatos/MateriaData.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/entidades/Materia.java</file>
         </group>
     </open-files>
 </project-private>

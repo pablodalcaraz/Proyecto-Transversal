@@ -51,13 +51,25 @@ public class ProyectoTransversal {
         Inscripcion insc1=new Inscripcion(2,josias, mat1, 5);
 //        inscripcion.guardarInscripcion(insc1);
         List<Inscripcion> listainscripcion = new ArrayList<>();
-        listainscripcion = inscripcion.obtenerInscripcion();
-        for (Inscripcion inscripcion1 : listainscripcion) {
-            System.out.println(inscripcion1.getIdInscripcion());
-            System.out.println(inscripcion1.getAlumno().getNombre());
-            System.out.println(inscripcion1.getMateria().getNombre());
-            System.out.println(inscripcion1.getNota());
-        }
+//        listainscripcion = inscripcion.obtenerInscripcion();
+//        for (Inscripcion inscripcion1 : listainscripcion) {
+//            System.out.println(inscripcion1.getIdInscripcion());
+//            System.out.println(inscripcion1.getAlumno().getNombre());
+//            System.out.println(inscripcion1.getMateria().getNombre());
+//            System.out.println(inscripcion1.getNota());
+//        }
+List<Materia> listamateria = new ArrayList<>();
+//listamateria = inscripcion.obtenerMateriasCursadas(1);
+// for(Materia materia1 : listamateria){
+//            System.out.println(materia1.toString());
+//        }
+//listamateria = inscripcion.obtenerMateriasNoCursadas(1);
+// for(Materia materia1 : listamateria){
+//            System.out.println(materia1.toString());
+//        }
+
+inscripcion.borrarInscripcionMateriaAlumno(1, 1);
+
     }
 
 }

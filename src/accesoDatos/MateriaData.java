@@ -46,7 +46,7 @@ public class MateriaData {
 
     public Materia buscarMateria(int id) {
         Materia materia = null;
-        String sql = "SELECT nombre, anioMateria, estado FROM alumno WHERE idMateria = ? AND estado = 1";
+        String sql = "SELECT nombre, anioMateria, estado FROM materia WHERE idMateria = ? AND estado = 1";
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
@@ -61,11 +61,11 @@ public class MateriaData {
                 materia.setEstado(true);;
 
             } else {
-                JOptionPane.showMessageDialog(null, "No existe el alumno");
+                JOptionPane.showMessageDialog(null, "No existe la materia");
                 ps.close();
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla materia " + ex.getMessage());
         }
 
         return materia;
@@ -79,6 +79,7 @@ public class MateriaData {
             ps.setString(1, materia.getNombre());
             ps.setInt(2, materia.getAnioMateria());
             ps.setBoolean(3, materia.isEstado());
+            ps.setInt(4, materia.getIdMateria());
             int exito = ps.executeUpdate();
 
             if (exito == 1) {
@@ -94,7 +95,7 @@ public class MateriaData {
 
     public void eliminarMateria(int id) {
         try {
-            String sql = "UPDATE materia SET estado = 0 WHERE idMatreria = ? ";
+            String sql = "UPDATE materia SET estado = 0 WHERE idMateria = ? ";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             int fila = ps.executeUpdate();
@@ -112,7 +113,7 @@ public class MateriaData {
     public List<Materia> listarMaterias() {
         List<Materia> materias = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM alumno WHERE estado = 1 ";
+            String sql = "SELECT * FROM materia WHERE estado = 1 ";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

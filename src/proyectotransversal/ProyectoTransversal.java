@@ -35,17 +35,28 @@ public class ProyectoTransversal {
 //            }
 //        System.out.println("ELIMINAR ALUMNO");
 //        alumno.eliminarAlumno(2);
-//        MateriaData materia=new MateriaData();
-        Materia mat1=new Materia(1,"laboratorio", 2024, true);
+        MateriaData materia=new MateriaData();
+//        Materia mat1=new Materia(1,"laboratorio", 2024, true);
 //        materia.guardarMateria(mat1);
+//        materia.buscarMateria(1);
+        Materia mat1=new Materia(1,"matematica", 2023, true);
+//        materia.modificarMateria(mat1);
+//        materia.eliminarMateria(1);
+//        List<Materia> listamateria = new ArrayList<>();
+//        listamateria = materia.listarMaterias();
+//        for(Materia materia1 : listamateria){
+//            System.out.println(materia1.toString());
+//        }
         InscripcionData inscripcion=new InscripcionData();  
-        Inscripcion insc1=new Inscripcion(josias, mat1, 5);
+        Inscripcion insc1=new Inscripcion(2,josias, mat1, 5);
 //        inscripcion.guardarInscripcion(insc1);
-        List<Inscripcion> lista=new ArrayList<>();
-        
-        lista=inscripcion.obtenerInscripcion();
-        for (Inscripcion inscripcion1 : lista) {
-            System.out.println(inscripcion1);
+        List<Inscripcion> listainscripcion = new ArrayList<>();
+        listainscripcion = inscripcion.obtenerInscripcion();
+        for (Inscripcion inscripcion1 : listainscripcion) {
+            System.out.println(inscripcion1.getIdInscripcion());
+            System.out.println(inscripcion1.getAlumno().getNombre());
+            System.out.println(inscripcion1.getMateria().getNombre());
+            System.out.println(inscripcion1.getNota());
         }
     }
 

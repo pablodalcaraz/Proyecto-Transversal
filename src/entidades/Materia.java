@@ -1,7 +1,7 @@
-
 package entidades;
 
 public class Materia {
+
     private int idMateria;
     private String nombre;
     private int anioMateria;

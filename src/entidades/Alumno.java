@@ -1,10 +1,9 @@
-
 package entidades;
 
 import java.time.LocalDate;
 
 public class Alumno {
-    
+
     private int idAlumno;
     private int dni;
     private String apellido;
@@ -80,12 +79,9 @@ public class Alumno {
         this.estado = estado;
     }
 
-   
-
     @Override
     public String toString() {
-        return dni+" "+apellido+" "+nombre ;
+        return dni + " " + apellido + " " + nombre;
     }
 
-   
 }

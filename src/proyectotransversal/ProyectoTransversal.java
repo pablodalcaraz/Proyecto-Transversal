@@ -27,7 +27,7 @@ public class ProyectoTransversal {
 //        alumno.buscarAlumno(1);
 //        System.out.println("El alumno buscado por id es: " + josias.toString());
 //        System.out.print("Lista de alumnos= ");
-//            List<Alumno> a = new ArrayList<>();
+            List<Alumno> a = new ArrayList<>();
 //            a = alumno.listarAlumnos();
 //            for (Alumno alumnos : a) {
 //                    System.out.println(alumnos.toString());
@@ -67,7 +67,19 @@ public class ProyectoTransversal {
 //            System.out.println(materia1.toString());
 //        }
 
-        inscripcion.borrarInscripcionMateriaAlumno(1, 1);
+//        inscripcion.borrarInscripcionMateriaAlumno(1, 1);
+//inscripcion.actualizarNota(1, 1, 10);
+
+    a = inscripcion.obtenerAlumnosXMateria(1);
+    
+    for (Alumno aux:a){ 
+        System.out.println(aux.toString());
+        
+    }
+    
+        
+
+
 
     }
 

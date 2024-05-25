@@ -170,10 +170,55 @@ public class InscripcionData {
         }
 
     }
-//    public void actualizarNota(int idAlumno, int idMateria,double nota){
-//    
-//    }
-//    public List<Alumno> obtenerAlumnosXMateria(int idMateria){
+    public void actualizarNota(int idAlumno, int idMateria,double nota){
+        String sql = "UPDATE inscripcion SET nota = ? WHERE idAlumno = ? AND idMateria = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setDouble(1, nota);
+              ps.setInt(2, idAlumno);
+            ps.setInt(3, idMateria);
+            int filas = ps.executeUpdate();
+            if (filas > 0) {
+                JOptionPane.showMessageDialog(null, "Nota actualizada");
+
+            }
+            ps.close();
+            
+        }catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a  la tabla inscripcion " + ex.getMessage());
+        }
+    }
+    public List<Alumno> obtenerAlumnosXMateria(int idMateria){
+       List<Alumno> alumnos = new ArrayList<>();
+       String sql = "SELECT a.idAlumno,dni,apellido,nombre,fechaNacimiento,estado FROM inscripcion i , alumno a WHERE i.idAlumno = a.idAlumno AND i.idMateria = ? AND a.estado = 1 ";
+               
+                 try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idMateria);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Alumno alumno = new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setDni(rs.getInt("dni"));
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setEstado(true);
+                alumnos.add(alumno);
+
+            }  
+               
+                ps.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion " + ex.getMessage());
+            
+        }
+                 return alumnos;
+       
+        
+    }
 //        
 //    }
 }

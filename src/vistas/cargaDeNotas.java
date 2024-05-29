@@ -8,12 +8,12 @@ package vistas;
  *
  * @author Josias
  */
-public class cargaDeNotas extends javax.swing.JInternalFrame {
+public class CargaDeNotas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form cargaDeNotas
      */
-    public cargaDeNotas() {
+    public CargaDeNotas() {
         initComponents();
     }
 

@@ -8,12 +8,12 @@ package vistas;
  *
  * @author Admin
  */
-public class gestionMateria extends javax.swing.JInternalFrame {
+public class GestionMateria extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form gestionMateria
      */
-    public gestionMateria() {
+    public GestionMateria() {
         initComponents();
     }
 

@@ -8,12 +8,12 @@ package vistas;
  *
  * @author Josias
  */
-public class gestionAlumno extends javax.swing.JInternalFrame {
+public class GestionAlumno extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form gestionAlumno
      */
-    public gestionAlumno() {
+    public GestionAlumno() {
         initComponents();
     }
 
@@ -90,9 +90,7 @@ public class gestionAlumno extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel6))
                                 .addGap(67, 67, 67)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jDFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jDFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtNombre)
                                     .addComponent(jtApellido)
                                     .addComponent(jtDni)

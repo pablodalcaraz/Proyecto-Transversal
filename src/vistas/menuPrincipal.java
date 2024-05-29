@@ -79,6 +79,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmAdministracion.add(jmManejoAdmin);
 
         jmManipulacionNota.setText("Manipulacion de Notas");
+        jmManipulacionNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmManipulacionNotaActionPerformed(evt);
+            }
+        });
         jmAdministracion.add(jmManipulacionNota);
 
         jMenuBar1.add(jmAdministracion);
@@ -86,6 +91,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmConsulta.setText("Consultas");
 
         jmAlumnoXMateria.setText("Alumnos por Materia");
+        jmAlumnoXMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmAlumnoXMateriaActionPerformed(evt);
+            }
+        });
         jmConsulta.add(jmAlumnoXMateria);
 
         jMenuBar1.add(jmConsulta);
@@ -110,13 +120,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmManejoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmManejoAdminActionPerformed
-        
+        escritorio.removeAll();
+        escritorio.repaint();
+        FormularioDeInscripcion fdi = new FormularioDeInscripcion();
+        fdi.setVisible(true);
+        escritorio.add(fdi);
+        escritorio.moveToFront(fdi);
     }//GEN-LAST:event_jmManejoAdminActionPerformed
 
     private void jmFormAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFormAlumnoActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        GestionAlumno gta= new GestionAlumno();
+        GestionAlumno gta = new GestionAlumno();
         gta.setVisible(true);
         escritorio.add(gta);
         escritorio.moveToFront(gta);
@@ -125,11 +140,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jmFormMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFormMateriaActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        GestionMateria gtm= new GestionMateria();
+        GestionMateria gtm = new GestionMateria();
         gtm.setVisible(true);
         escritorio.add(gtm);
         escritorio.moveToFront(gtm);
     }//GEN-LAST:event_jmFormMateriaActionPerformed
+
+    private void jmManipulacionNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmManipulacionNotaActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        CargaDeNotas cdn = new CargaDeNotas();
+        cdn.setVisible(true);
+        escritorio.add(cdn);
+        escritorio.moveToFront(cdn);
+    }//GEN-LAST:event_jmManipulacionNotaActionPerformed
+
+    private void jmAlumnoXMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmAlumnoXMateriaActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        ConsultaAlumnoMateria cam = new ConsultaAlumnoMateria();
+        cam.setVisible(true);
+        escritorio.add(cam);
+        escritorio.moveToFront(cam);
+    }//GEN-LAST:event_jmAlumnoXMateriaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

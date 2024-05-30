@@ -37,7 +37,6 @@ public class ConsultaAlumnoMateria extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Seleccione una materia:");
 
-        JCBSelecMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         JCBSelecMateria.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
             public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
                 JCBSelecMateriaVetoableChange(evt);

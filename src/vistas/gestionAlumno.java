@@ -120,7 +120,7 @@ public class GestionAlumno extends javax.swing.JInternalFrame {
                             .addComponent(jtDni)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jrbEstado)
-                                .addGap(0, 132, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jDFechaNac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(14, 14, 14)
                         .addComponent(jBBuscar))

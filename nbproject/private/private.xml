@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/vistas/GestionAlumno.java</file>
-            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/vistas/menuPrincipal.java</file>
-            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/vistas/GestionMateria.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/vistas/gestionMateria.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/accesoDatos/InscripcionData.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/vistas/CargaDeNotas.java</file>
             <file>file:/C:/Users/pablo/OneDrive/Documentos/GitHub/Proyecto-Transversal/src/vistas/FormularioDeInscripcion.java</file>
         </group>
     </open-files>

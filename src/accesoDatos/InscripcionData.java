@@ -72,7 +72,7 @@ public class InscripcionData {
 
     public List<Inscripcion> obtenerInscripcionPorAlumno(int id) {
         List<Inscripcion> inscripcion = new ArrayList<>();
-        String sql = "SELECT * FROM inscripcion JOIN alumno ON inscripcion.idAlumno == alumno.IdAlumno "
+        String sql = "SELECT * FROM inscripcion JOIN alumno ON inscripcion.idAlumno = alumno.IdAlumno "
                 + "WHERE inscripcion.idAlumno =?";
         PreparedStatement ps = null;
         try {

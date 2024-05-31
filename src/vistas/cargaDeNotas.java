@@ -10,6 +10,7 @@ import entidades.Alumno;
 import entidades.Inscripcion;
 import entidades.Materia;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CargaDeNotas extends javax.swing.JInternalFrame {
 
-     private AlumnoData aluData = new AlumnoData();
+    private AlumnoData aluData = new AlumnoData();
     private List<Alumno> alumnos;
     private DefaultTableModel modelo;
     private InscripcionData inscData = new InscripcionData();
@@ -33,8 +34,7 @@ public class CargaDeNotas extends javax.swing.JInternalFrame {
         alumnos = aluData.listarAlumnos();
         cargarAlumnos();
     } catch (Exception e) {
-        e.printStackTrace();
-        // Maneja la excepción (puede ser mostrar un mensaje de error al usuario)
+        JOptionPane.showMessageDialog(this, "Error al cargar nota");
     }
     }
 
@@ -88,6 +88,11 @@ public class CargaDeNotas extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(JtbleListaAlum);
 
         jBSalir.setText("Salir");
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
 
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -164,8 +169,23 @@ public class CargaDeNotas extends javax.swing.JInternalFrame {
 }
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
-           
+    int filaSeleccionada = JtbleListaAlum.getSelectedRow();
+        
+    if (filaSeleccionada == -1) {
+        JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila para modificar la nota.");
+        return;
+    }
+    int idAlumno = ((Alumno) JCBSelecAlumnos.getSelectedItem()).getIdAlumno();
+    int idInscripcion = (int) JtbleListaAlum.getValueAt(filaSeleccionada, 0);
+    double nuevaNota = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese la nueva nota:"));
+    inscData.actualizarNota(idAlumno, idInscripcion, nuevaNota);
+    cargarInscripciones(idAlumno);
+    JOptionPane.showMessageDialog(null, "La nota ha sido modificada con éxito.");
     }//GEN-LAST:event_jBGuardarActionPerformed
+
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+       dispose();
+    }//GEN-LAST:event_jBSalirActionPerformed
 
      private void cargarAlumnos() {
         for (Alumno item : alumnos) {

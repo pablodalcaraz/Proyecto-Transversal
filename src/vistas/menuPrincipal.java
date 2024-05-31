@@ -7,6 +7,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        
     }
 
     /**
@@ -101,6 +102,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jmConsulta);
 
         jMSalir.setText("Salir");
+        jMSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMSalirActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMSalir);
 
         setJMenuBar(jMenuBar1);
@@ -163,6 +169,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         escritorio.add(cam);
         escritorio.moveToFront(cam);
     }//GEN-LAST:event_jmAlumnoXMateriaActionPerformed
+
+    private void jMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalirActionPerformed
+       jMSalir.setText("Salir");
+jMSalir.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jMSalirActionPerformed(evt); // Llamar al método al hacer clic en "Salir"
+    }
+});
+jMenuBar1.add(jMSalir);
+    }//GEN-LAST:event_jMSalirActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

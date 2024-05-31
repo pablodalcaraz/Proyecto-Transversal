@@ -4,17 +4,32 @@
  */
 package vistas;
 
+import accesoDatos.InscripcionData;
+import accesoDatos.MateriaData;
+import entidades.Alumno;
+import entidades.Materia;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Admin
  */
 public class ConsultaAlumnoMateria extends javax.swing.JInternalFrame {
-
+      private MateriaData matData;
+      private List<Materia> materias;
+      private InscripcionData inscData;
+      private DefaultTableModel modelo;
     /**
      * Creates new form ConsultaAlumnoMateria
      */
     public ConsultaAlumnoMateria() {
         initComponents();
+        modelo = (DefaultTableModel) jtbleListaMat.getModel();
+        matData= new MateriaData();
+        inscData=new InscripcionData();
+        materias= matData.listarMaterias();
+        cargarMaterias();
     }
 
     /**
@@ -37,6 +52,11 @@ public class ConsultaAlumnoMateria extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Seleccione una materia:");
 
+        JCBSelecMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCBSelecMateriaActionPerformed(evt);
+            }
+        });
         JCBSelecMateria.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
             public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
                 JCBSelecMateriaVetoableChange(evt);
@@ -107,16 +127,42 @@ public class ConsultaAlumnoMateria extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void JCBSelecMateriaVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_JCBSelecMateriaVetoableChange
         // TODO add your handling code here:
     }//GEN-LAST:event_JCBSelecMateriaVetoableChange
 
+    private void JCBSelecMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBSelecMateriaActionPerformed
+              Materia materiaSeleccionada = (Materia) JCBSelecMateria.getSelectedItem();
+        if (materiaSeleccionada != null) {
+            cargarAlumnos(materiaSeleccionada.getIdMateria());
+        }
+    }//GEN-LAST:event_JCBSelecMateriaActionPerformed
+private void cargarAlumnos(int idMateria) {
+        borrarFilaTabla();
+        List<Alumno> alumnos = inscData.obtenerAlumnosXMateria(idMateria);
+        for (Alumno alumno : alumnos) {
+            modelo.addRow(new Object[]{alumno.getIdAlumno(),alumno.getDni() ,alumno.getApellido(),alumno.getNombre()});
+        }
+    }
+  private void cargarMaterias() {
+        for (Materia item : materias) {
+            JCBSelecMateria.addItem(item);
+        }
+    }
+  private void borrarFilaTabla() {
+    if (modelo != null) {
+        int rowCount = modelo.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            modelo.removeRow(i);
+        }
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> JCBSelecMateria;
+    private javax.swing.JComboBox<Materia> JCBSelecMateria;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
